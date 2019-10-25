@@ -1,27 +1,17 @@
 package Homework.HW4;
 
 public class Human {
-    public  String name;
-    public  String surname;
-    public  int year;
-    public  byte iq;
+
+    public String name;
+    public String surname;
+    public int year;
+    public int IQ;
     public Pet pet;
-    public  Human mother;
+    public Human mother;
     public Human father;
-    public  String[][] scedule;
+    // public String[][] scedule;
 
     public Human() {
-    }
-
-    public Human(String name, String surname, int year, byte iq, Pet pet, Human mother, Human father, String[][] scedule) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.iq = iq;
-        this.pet = pet;
-        this.mother = mother;
-        this.father = father;
-        this.scedule = scedule;
     }
 
     public Human(String name, String surname, int year) {
@@ -38,10 +28,37 @@ public class Human {
         this.father = father;
     }
 
-    public  void greetpet(){
-        System.out.println("Hello "+pet.nickname);
+    public Human(String name, String surname, int year, int IQ, Pet pet, Human mother, Human father) {
+        this.name = name;
+        this.surname = surname;
+        this.year = year;
+        this.IQ = IQ;
+        this.pet = pet;
+        this.mother = mother;
+        this.father = father;
     }
-    public  void describePet(){
-        System.out.println(" I have a "+pet.species+" he is "+pet.age+" years old he is ...");
+
+    public Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+
+    public String greetPet(Pet pet) {
+        return " Hello, [" + pet.nickname + "] ";
+    }
+
+    public String describePet(Pet pet) {
+        return "I have a [" + pet.species + "], he is [" + pet.age + "] "
+                + "years old, he is very sly.";
+
+    }
+
+    @Override
+    public String toString() {
+        return "Human{" + "name=" + name + ", surname=" + surname + ", year=" + year + ", "
+                + "IQ=" + IQ + ", pet=" + pet + ", mother=" + mother.name + "  " + mother.surname + ","
+                + " father=" + father.name + " " + father.surname + ", "
+                + '}';
     }
 }
