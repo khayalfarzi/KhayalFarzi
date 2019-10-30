@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class WorkingWithString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[][] scedule = new String[7][2];
+        String[][] Scedule = new String[7][2];
 
-        scedule[0][0] = " Monday ";
-        scedule[0][1] = "go to courses; watch a film";
-        scedule[1][0] = " Tuesday ";
-        scedule[1][1] = " go to IBA Tech Academy; do home work";
-        scedule[2][0] = " Wednesday ";
-        scedule[2][1] = " go to University ; do home work ";
-        scedule[3][0] = " Thursday ";
-        scedule[3][1] = " go to IBA Tech Academy; do home work ";
-        scedule[4][0] = " Friday ";
-        scedule[4][1] = " go to courses; meet the friends ";
-        scedule[5][0] = " Saturday ";
-        scedule[5][1] = " go to IBA Tech Academy; do home work ";
-        scedule[6][0] = " Sunday ";
-        scedule[6][1] = " do home work ";
-        boolean loopbrk = true;   // for break the Loop
+        Scedule[0][0] = " Monday ";
+        Scedule[0][1] = "go to courses; watch a film";
+        Scedule[1][0] = " Tuesday ";
+        Scedule[1][1] = " go to IBA Tech Academy; do home work";
+        Scedule[2][0] = " Wednesday ";
+        Scedule[2][1] = " go to University ; do home work ";
+        Scedule[3][0] = " Thursday ";
+        Scedule[3][1] = " go to IBA Tech Academy; do home work ";
+        Scedule[4][0] = " Friday ";
+        Scedule[4][1] = " go to courses; meet the friends ";
+        Scedule[5][0] = " Saturday ";
+        Scedule[5][1] = " go to IBA Tech Academy; do home work ";
+        Scedule[6][0] = " Sunday ";
+        Scedule[6][1] = " do home work ";
+        boolean loopBrk = true;   // for break the Loop
 
-        while (loopbrk == true) {
+        while (loopBrk == true) {
             System.out.print(" Please, input the day of the week: ");
             String WeekDay = sc.nextLine();
 
@@ -34,35 +34,35 @@ public class WorkingWithString {
                     break;
                 }
                 case "monday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[0][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[0][1]);
                     break;
                 }
                 case "tuesday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[1][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[1][1]);
                     break;
                 }
                 case "wednesday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[2][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[2][1]);
                     break;
                 }
                 case "thursday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[3][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[3][1]);
                     break;
                 }
                 case "friday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[4][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[4][1]);
                     break;
                 }
                 case "saturday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[5][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[5][1]);
                     break;
                 }
                 case "sunday": {
-                    System.out.println("Your tasks for " + WeekDay + " : " + scedule[6][1]);
+                    System.out.println("Your tasks for " + WeekDay + " : " + Scedule[6][1]);
                     break;
                 }
                 case "exit": {
-                    loopbrk = false;
+                    loopBrk = false;
                     break;
                 }
             }

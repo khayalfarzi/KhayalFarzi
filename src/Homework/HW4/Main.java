@@ -20,8 +20,11 @@ public class Main {
 
         System.out.println(human3.toString());
         System.out.println(child.greetPet(pet1));
-        System.out.println(pet.respond(pet1));
         System.out.println(child.describePet(pet2));
+        System.out.println(pet.respond(pet1));
+        System.out.println(pet.eat());
+        System.out.println(pet.foul());
+
 
 
     }

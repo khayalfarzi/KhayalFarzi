@@ -9,7 +9,7 @@ public class Human {
     public Pet pet;
     public Human mother;
     public Human father;
-    // public String[][] scedule;
+    public String[][] scedule;
 
     public Human() {
     }
