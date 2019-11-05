@@ -1,6 +1,7 @@
 package Homework.HW6;
 
 import Homework.HW6.Species;
+import com.sun.org.apache.xpath.internal.objects.XString;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -19,20 +20,20 @@ import java.util.Objects;
 public class Pet {
 
     private Species species;
-    private Species nickname;
+    private String nickname;
     private int age;
     private int trickLevel;
-    private Species[] habits;
+    private String [] habits;
 
     public Pet() {
     }
 
-    public Pet(Species species, Species nickname) {
+    public Pet(Species species, String nickname) {
         this.species = species;
         this.nickname = nickname;
     }
 
-    public Pet(Species species, Species nickname, int age, int trickLevel, Species[] habits) {
+    public Pet(Species species, String nickname, int age, int trickLevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -48,11 +49,11 @@ public class Pet {
         this.species = species;
     }
 
-    public Species getNickname() {
+    public String getNickname() {
         return nickname;
     }
 
-    public void setNickname(Species nickname) {
+    public void setNickname(String nickname) {
         this.nickname = nickname;
     }
 
@@ -72,11 +73,11 @@ public class Pet {
         this.trickLevel = trickLevel;
     }
 
-    public Species[] getHabits() {
+    public String[] getHabits() {
         return habits;
     }
 
-    public void setHabits(Species[] habits) {
+    public void setHabits(String[] habits) {
         this.habits = habits;
     }
 
