@@ -69,6 +69,9 @@ public abstract class Pet {
 
     public abstract String respond(Pet pet);
 
+    public void eat() {
+    }
+
     @Override
     protected void finalize() throws Throwable {
         super.finalize();

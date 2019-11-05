@@ -1,5 +1,5 @@
 package Homework.HW7;
 
-public interface Foul {
+public interface Foulable {
     String foul();
 }

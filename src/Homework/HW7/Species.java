@@ -6,8 +6,8 @@ public enum Species {
     PARROT,
     HORSE,
     HEN,
-    ROBOCAT,
+    ROBO_CAT,
     FISH,
-    DOMESTICCAT,
+    DOMESTIC_CAT,
     UNKNOWN;
 }

@@ -1,6 +1,6 @@
 package Homework.HW7;
 
-public class Dog extends Pet implements Foul {
+public class Dog extends Pet implements Foulable {
 
     @Override
     public String respond(Pet pet) {
