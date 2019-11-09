@@ -1,7 +1,6 @@
 
-package Homework.HW8;
+package Homework.HW9;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -13,7 +12,6 @@ public abstract class Human {
     private int year;
     private int IQ;
     private HashMap<String, String> scedule;
-    private Family family;
 
     public Human() {
     }
@@ -22,15 +20,6 @@ public abstract class Human {
         this.name = name;
         this.surname = surname;
         this.year = year;
-    }
-
-    public Human(String name, String surname, int year, int IQ, HashMap<String, String> scedule, Family family) {
-        this.name = name;
-        this.surname = surname;
-        this.year = year;
-        this.IQ = IQ;
-        this.scedule = scedule;
-        this.family = family;
     }
 
     public Human(String name, String surname, int year, int IQ, HashMap<String, String> scedule) {
@@ -86,31 +75,11 @@ public abstract class Human {
         this.scedule = scedule;
     }
 
-    public Family getFamily() {
-        return family;
-    }
-
-    public void setFamily(Family family) {
-        this.family = family;
-    }
-
     abstract String greetPet(Pet pet);
 
     public String describePet(Pet pet) {
         return "I have a [" + pet.getSpecies() + "], he is [" + pet.getAge() + "] "
                 + "years old, he is very sly.";
-    }
-
-    public void toWelcomeTheFavourite() {
-
-    }
-
-    public void toDescribeTheFavourite() {
-
-    }
-
-    public void toFeed() {
-
     }
 
     @Override
@@ -122,51 +91,23 @@ public abstract class Human {
     @Override
     public String toString() {
         return "Human{" + "name=" + name + ", surname=" + surname + ", "
-                + "year=" + year + ", IQ=" + IQ + ", scedule=" + scedule + ", family=" + family + '}';
+                + "year=" + year + ", IQ=" + IQ + ", scedule=" + scedule + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Human human = (Human) o;
+        return year == human.year &&
+                IQ == human.IQ &&
+                Objects.equals(name, human.name) &&
+                Objects.equals(surname, human.surname) &&
+                Objects.equals(scedule, human.scedule);
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 23 * hash + Objects.hashCode(this.name);
-        hash = 23 * hash + Objects.hashCode(this.surname);
-        hash = 23 * hash + this.year;
-        hash = 23 * hash + this.IQ;
-        hash = 23 * hash + Objects.hashCode(this.scedule);
-        hash = 23 * hash + Objects.hashCode(this.family);
-        return hash;
+        return Objects.hash(name, surname, year, IQ, scedule);
     }
-
-    public boolean equals(Human obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Human other = (Human) obj;
-        if (this.year != other.year) {
-            return false;
-        }
-        if (this.IQ != other.IQ) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.surname, other.surname)) {
-            return false;
-        }
-        if (!Objects.equals(this.scedule, other.scedule)) {
-            return false;
-        }
-        if (!Objects.equals(this.family, other.family)) {
-            return false;
-        }
-        return true;
-    }
-
 }

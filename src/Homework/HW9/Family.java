@@ -1,22 +1,27 @@
 
-package Homework.HW8;
+package Homework.HW9;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Objects;
 
 
 public final class Family {
 
+    private int ID;
+    private String nameFamily;
     private Human father;
     private Human mother;
     private ArrayList<Human> children;
     private Pet pet;
 
-    public Family(Human father, Human mother) {
+    public Family() {
+    }
+
+    public Family(int ID, String nameFamily, Human father, Human mother) {
         this.father = father;
         this.mother = mother;
-
+        this.nameFamily = nameFamily;
+        this.ID = ID;
     }
 
     public Family(Human father, Human mother, ArrayList<Human> children, Pet pet) {
@@ -24,6 +29,31 @@ public final class Family {
         this.mother = mother;
         this.children = children;
         this.pet = pet;
+    }
+
+    public Family(int ID, String nameFamily, Human father, Human mother, ArrayList<Human> children, Pet pet) {
+        this.ID = ID;
+        this.nameFamily = nameFamily;
+        this.father = father;
+        this.mother = mother;
+        this.children = children;
+        this.pet = pet;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getNameFamily() {
+        return nameFamily;
+    }
+
+    public void setNameFamily(String nameFamily) {
+        this.nameFamily = nameFamily;
     }
 
     public Human getFather() {
@@ -58,10 +88,12 @@ public final class Family {
         this.pet = pet;
     }
 
-    public void addChild(Human child) {
-        ArrayList<Human> childArrList = new ArrayList<>();
-        childArrList.add(child);
-        setChildren(childArrList);
+    public void addChild(ArrayList<Human> child) {
+        ArrayList<Human> child1 = new ArrayList<>();
+        for (int i = 0; i < child.size(); i++) {
+            child1.add(child.get(i));
+        }
+        setChildren(child1);
     }
 
     public boolean deleteChild(int index) {
@@ -91,6 +123,10 @@ public final class Family {
         return " The count of family members: " + (familyCount.getChildren().size() + 2);
     }
 
+    public int count() {
+        return 0;
+    }
+
     @Override
     public void finalize() throws Throwable {
         super.finalize();
@@ -99,44 +135,31 @@ public final class Family {
 
     @Override
     public String toString() {
-        return "Family{" + "father=" + father + ", mother=" + mother + ", "
-                + "children=" + children + ", pet=" + pet + '}';
+        return "Family{" +
+                "ID=" + ID +
+                ", nameFamily='" + nameFamily + '\'' +
+                ", father=" + father +
+                ", mother=" + mother +
+                ", children=" + children +
+                ", pet=" + pet +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Family family = (Family) o;
+        return ID == family.ID &&
+                nameFamily.equals(family.nameFamily) &&
+                father.equals(family.father) &&
+                mother.equals(family.mother) &&
+                children.equals(family.children) &&
+                pet.equals(family.pet);
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 97 * hash + Objects.hashCode(this.father);
-        hash = 97 * hash + Objects.hashCode(this.mother);
-        hash = 97 * hash + Objects.hashCode(this.children);
-        hash = 97 * hash + Objects.hashCode(this.pet);
-        return hash;
+        return Objects.hash(ID, nameFamily, father, mother, children, pet);
     }
-
-    public boolean equals(Family obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Family other = (Family) obj;
-        if (!Objects.equals(this.father, other.father)) {
-            return false;
-        }
-        if (!Objects.equals(this.mother, other.mother)) {
-            return false;
-        }
-        if (!Objects.equals(this.children, other.children)) {
-            return false;
-        }
-        if (!Objects.equals(this.pet, other.pet)) {
-            return false;
-        }
-        return true;
-    }
-
 }

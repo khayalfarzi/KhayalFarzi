@@ -52,7 +52,7 @@ public class Person extends Human implements HumanCreator {
     }
 
     @Override
-    String greetPet(Pet pet) {
+    public String greetPet(Pet pet) {
 
         return "";
     }
