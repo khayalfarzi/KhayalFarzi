@@ -1,0 +1,74 @@
+
+    public void toWelcomeTheFavourite() {
+
+    }
+
+    public void toDescribeTheFavourite() {
+
+    }
+
+    public void toFeed() {
+
+    }
+
+public class FamilyService implements FamilyDao<Family> {
+
+    @Override
+
+
+    @Override
+
+
+    @Override
+
+
+    @Override
+    public boolean deleteFamily(String family) {
+        boolean result = false;
+        for (int i = 0; i < Families.size(); i++) {
+            if (Families.get(i).getNameFamily().equals(family)) {
+                Families.remove(i);
+                return result = true;
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public void saveFamily(List<Family> family) {
+        cfd.saveFamily(family);
+    }
+
+    public List<Family> getFamilyByIndex(int index) {
+        ArrayList<Family> getFamily = new ArrayList<>();
+        for (int i = 0; i < getFamilies().size(); i++) {
+            if (index == i) {
+                getFamily.add(getFamilies().get(i));
+            }
+        }
+        return getFamily;
+    }
+
+    public boolean deleteFamily(int index) {
+        boolean result = false;
+        if (index >= 0 && index < Families.size()) {
+            for (int i = 0; i < Families.size(); i++) {
+                if (index == i) {
+                    Families.remove(index);
+                    return result = true;
+                } else {
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
+    public String toString() {
+        return "FamilyService{" +
+                "Families=" + Families +
+                '}';
+    }
+}
+
+
+
